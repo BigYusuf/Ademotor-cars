@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {deleteProduct, listProducts} from '../actions/productActions';
-import LoadingBox from '../components/LoadingBox';
+import {deleteProduct, listProducts} from '../../actions/productActions';
+import LoadingBox from '../../components/LoadingBox';
 import { Link } from 'react-router-dom';
-import Table from '../components/table/Table';
-import MessageBox from '../components/MessageBox';
-import { PRODUCT_CREATE_RESET, PRODUCT_DELETE_RESET} from '../constants/productConstants';
+import Table from '../../components/table/Table';
+import MessageBox from '../../components/MessageBox';
+import { PRODUCT_CREATE_RESET, PRODUCT_DELETE_RESET} from '../../constants/productConstants';
 
-import './style2.css'
+import '../style2.css'
 
 export default function ProductListPage(props) {
   const productList = useSelector((state) => state.productList);

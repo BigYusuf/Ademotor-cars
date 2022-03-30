@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteUser, listUsers } from '../actions/userActions';
-import LoadingBox from '../components/LoadingBox';
+import { deleteUser, listUsers } from '../../actions/userActions';
+import LoadingBox from '../../components/LoadingBox';
 import { Link } from 'react-router-dom';
-import MessageBox from '../components/MessageBox';
-import Table from '../components/table/Table';
-import './style2.css'
-import { USER_DETAILS_RESET } from '../constants/userConstants';
+import MessageBox from '../../components/MessageBox';
+import Table from '../../components/table/Table';
+import '../style2.css'
+import { USER_DETAILS_RESET } from '../../constants/userConstants';
 
 export default function UserListPage(props) {
   const userList = useSelector((state) => state.userList);
