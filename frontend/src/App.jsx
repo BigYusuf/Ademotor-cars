@@ -2,7 +2,6 @@ import React from 'react';
 import {BrowserRouter, Route } from 'react-router-dom';
 import AdminRoute from './components/AdminRoute';
 import PrivateRoute from './components/PrivateRoute';
-import Navbar from './components/Navbar';
 import HomePage from './pages/home_page/HomePage';
 import RegisterPage from './pages/RegisterPage';
 import LoginPage from './pages/LoginPage';
@@ -27,11 +26,11 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-      <Navbar/>
         <Route path = '/' component = {HomePage} exact></Route>
         <Route path = '/login' component = {LoginPage}></Route>
         <Route path = '/register' component = {RegisterPage}></Route>
-        <Route path = '/products' component = {ViewAllProductPage}></Route>
+        <Route path = '/products' component = {ViewAllProductPage} exact></Route>
+        <Route path = '/products/search/:keyword' component = {ViewAllProductPage}></Route>
         <Route path = '/product/:id' component = {ProductPage} exact></Route>
         <Route path = '/createproduct' component = {ProductCreatePage} exact></Route>
         <Route path="/product/:id/edit" component={ProductEditPage} exact></Route>

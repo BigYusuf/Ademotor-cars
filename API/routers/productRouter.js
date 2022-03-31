@@ -20,8 +20,23 @@ productRouter.get( '/popular', expressAsyncHandler(async (req, res) => {
     res.send(products);
   })
 );
+productRouter.get( '/', expressAsyncHandler(async (req, res, next) => {
+  const resPerPage = 8;
+  const productsCount = await Product.countDocuments();
+  const apiFeatures = new APIFeatures(Product.find(), req.query)
+      .search()
+      .filter()
+      .pagination(resPerPage)
+  const products = await apiFeatures.query;
+    res.status(200).json({
+      productsCount,
+      products, 
+      resPerPage
+    });
+  })
+);
 
-productRouter.get("/", async (req, res) => {
+/*productRouter.get("/", async (req, res) => {
   //return all new products
   const qNew = req.query.new;
   const qCategory = req.query.category;
@@ -41,7 +56,7 @@ productRouter.get("/", async (req, res) => {
   }catch(err){
       res.status(500).json(err);
   } 
-});
+});*/
 
 productRouter.get( '/seed', expressAsyncHandler(async (req, res) => {
     // await Product.remove({});
