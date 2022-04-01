@@ -39,7 +39,7 @@ const Header = () => {
 
                 <div id="menu-btn" onClick={handleBar} className={!active ? "fas fa-times": "fas fa-bars"}></div>
                 <Link to="/" className="logo"> <span>ade</span>Motors </Link>
-                <div className="search">
+                <div className={!active "search active" : "search"}>
                   <Route render= {({history}) => <Search history ={history}/> }/>
                 </div>
 

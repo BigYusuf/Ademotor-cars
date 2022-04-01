@@ -20,12 +20,12 @@ import {
   PRODUCT_DELETE_SUCCESS,
 } from '../constants/productConstants';
 
-export const listProducts = (currentPage = 1, keyword = '') => async (dispatch) => {
-  dispatch({
-    type: PRODUCT_LIST_REQUEST,
-  });
+export const listProducts = (keyword = '', currentPage = 1) => async (dispatch) => {
+  dispatch({ type: PRODUCT_LIST_REQUEST });
+  //let link = `/api/products?keyword=${keyword}&page=${currentPage}&price[lte]=${price[1]}&price[gte]=${price[0]}`
+  let link = `/api/products?keyword=${keyword}&page=${currentPage}`
   try {
-    const { data } = await Axios.get(`/api/products?keyword=${keyword}&page=${currentPage}`);
+    const { data } = await Axios.get(link);
     dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data });
   } catch (error) {
     dispatch({ type: PRODUCT_LIST_FAIL, payload: error.message });
