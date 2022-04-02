@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { signout } from '../actions/userActions';
-import Search from './Search';
-import { Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     const [active, setActive] = useState("false");
@@ -39,10 +38,7 @@ const Header = () => {
 
                 <div id="menu-btn" onClick={handleBar} className={!active ? "fas fa-times": "fas fa-bars"}></div>
                 <Link to="/" className="logo"> <span>ade</span>Motors </Link>
-                <div className={!active "search active" : "search"}>
-                  <Route render= {({history}) => <Search history ={history}/> }/>
-                </div>
-
+               
                 <div>
                   <Link to="/cart" className="header__cart"> Cart
                   {cartItems.length >= 0 && 

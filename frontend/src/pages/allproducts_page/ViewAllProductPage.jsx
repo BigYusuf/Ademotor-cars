@@ -3,9 +3,10 @@ import Pagination from 'react-js-pagination';
 import Product from '../../components/Product';
 import LoadingBox from '../../components/LoadingBox';
 import MessageBox from '../../components/MessageBox';
+import Search from '../../components/Search';
 import { useDispatch, useSelector } from 'react-redux';
 import { listProducts } from '../../actions/productActions';
-import Header from '../../components/Header';
+import { Route } from 'react-router-dom';
 import '../style2.css';
 import './viewAllProduct.css';
 import 'rc-slider/assets/index.css';
@@ -29,7 +30,10 @@ export default function ViewAllProductPage({match}) {
   }
   return (
     <div className="products__container">
-      <Header/>
+      
+      <div className="search">
+        <Route render= {({history}) => <Search history ={history}/> }/>
+      </div>
       {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (

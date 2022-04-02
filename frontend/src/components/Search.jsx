@@ -21,11 +21,9 @@ const Search = ({history}) => {
                 placeholder='Enter Product Name....'
                 onChange={(e)=> setKeyword(e.target.value)}
                  />
-                <div className="search__button__wrapper">
-                    <button type='submit' className="search__button">
-
-                    </button>
-                </div>
+                <button type='submit' className="search__button">
+                    Search
+                </button>
             </div>
         </form>
     )

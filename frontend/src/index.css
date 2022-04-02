@@ -80,7 +80,7 @@ section{
     justify-content: space-between;
     position: fixed;
     top:0; left:0; right:0;
-    padding:3rem 9%;
+    padding:2rem 9%;
     z-index: 1000;
     background: #fff;
 }
@@ -760,7 +760,12 @@ h1,
     object-fit: contain;
 }
 
-
+.search{
+    opacity: 1;
+}
+.search.active{
+    opacity: 1;
+}
 
 
 
