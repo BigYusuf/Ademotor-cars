@@ -4,8 +4,8 @@ import { deleteUser, listUsers } from '../../actions/userActions';
 import LoadingBox from '../../components/LoadingBox';
 import { Link } from 'react-router-dom';
 import MessageBox from '../../components/MessageBox';
-import Table from '../../components/table/Table';
-import '../style2.css'
+import Table from '../../components/Table';
+import './listPages.css'
 import { USER_DETAILS_RESET } from '../../constants/userConstants';
 
 export default function UserListPage(props) {
@@ -47,11 +47,11 @@ const renderBody = (user, index) => (
     }
   };
   return (
-    <div>
+    <div className="list__container">
     <Link to='/'>
             <button type="button" className="btn"> Go back</button>
       </Link> 
-      <h1>Users</h1>
+      <h1 className="list__title">Users</h1>
       {loadingDelete && <LoadingBox></LoadingBox>}
       {errorDelete && <MessageBox variant="danger">{errorDelete}</MessageBox>}
       {successDelete && (

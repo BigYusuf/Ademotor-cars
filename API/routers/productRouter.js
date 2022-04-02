@@ -7,15 +7,10 @@ const  APIFeatures  = require('../utils/apiFeatures');
 
 const productRouter = express.Router();
 
-//productRouter.get( '/', expressAsyncHandler(async (req, res) => {
-  //  const products = await Product.find({});
-    //res.send(products);
-  //})
-//);
 productRouter.get( '/popular', expressAsyncHandler(async (req, res) => {
-  //  const products = await Product.find({});
-  const apiFeatures = new APIFeatures(Product.find({model:"Toyota"}), req.query)
-                    .search()
+
+  const apiFeatures = new APIFeatures(Product.find({Model:"Toyota"}), req.query)
+
   const products = await apiFeatures.query;
     res.send(products);
   })

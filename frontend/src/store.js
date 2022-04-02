@@ -5,7 +5,10 @@ import {
   productDeleteReducer,
   productDetailsReducer,
   productListReducer,
+  productList_ALL_Reducer,
   productListPReducer,
+  productList_F1_Reducer,
+  productList_F2_Reducer,
   productUpdateReducer,
 } from './reducers/productReducers';
 
@@ -49,7 +52,10 @@ const initialState = {
 };
 const reducer = combineReducers({
   productList: productListReducer,
+  productListAll: productList_ALL_Reducer,
   productListP: productListPReducer,
+  productList_F1: productList_F1_Reducer,
+  productList_F2: productList_F2_Reducer,
   productDetails: productDetailsReducer,
   cart: cartReducer, 
   orderCreate: orderCreateReducer,

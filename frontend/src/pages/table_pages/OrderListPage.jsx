@@ -1,20 +1,18 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Table from '../../components/table/Table';
+import { Link } from 'react-router-dom';
+import Table from '../../components/Table';
 import { deleteOrder, listOrders } from '../../actions/orderActions';
 import LoadingBox from '../../components/LoadingBox';
 import MessageBox from '../../components/MessageBox';
 import { ORDER_DELETE_RESET } from '../../constants/orderConstants';
+import './listPages.css';
 
 export default function OrderListPage(props) {
   const orderList = useSelector((state) => state.orderList);
   const { loading, error, orders } = orderList;
   const orderDelete = useSelector((state) => state.orderDelete);
-  const {
-    loading: loadingDelete,
-    error: errorDelete,
-    success: successDelete,
-  } = orderDelete;
+  const { loading: loadingDelete, error: errorDelete, success: successDelete } = orderDelete;
   const dispatch = useDispatch();
 
   const customerTableHead = ['ID', 'USER', 'DATE', 'TOTAL', 'PAID', 'DELIVERED', 'ACTIONS']
@@ -34,21 +32,13 @@ export default function OrderListPage(props) {
           : 'No'}
       </td>
       <td>
-        <button
-          type="button"
-          className="small"
-          onClick={() => {
+        <button type="button" className="list__small_btn" onClick={() => {
             props.history.push(`/order/${order._id}`);
           }}
-        >
-          Details
+        >Details
         </button>
-        <button
-          type="button"
-          className="small"
-          onClick={() => deleteHandler(order)}
-        >
-          Delete
+        <button type="button" className="list__small_btn" onClick={() => deleteHandler(order)}
+        >Delete
         </button>
       </td>
     </tr>
@@ -63,8 +53,11 @@ export default function OrderListPage(props) {
     }
   };
   return (
-    <div>
-      <h1>Orders</h1>
+    <div className="list__container">
+      <Link to='/'>
+            <button type="button" className="btn"> Go back</button>
+      </Link> 
+      <h1 className="list__title">Orders</h1>
       {loadingDelete && <LoadingBox></LoadingBox>}
       {errorDelete && <MessageBox variant="danger">{errorDelete}</MessageBox>}
       {loading ? (

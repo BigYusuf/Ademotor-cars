@@ -12,6 +12,12 @@ import {
   PRODUCT_LISTP_FAIL,
   PRODUCT_LISTP_REQUEST,
   PRODUCT_LISTP_SUCCESS,
+  PRODUCT_LIST_F1_FAIL,
+  PRODUCT_LIST_F1_REQUEST,
+  PRODUCT_LIST_F1_SUCCESS,
+  PRODUCT_LIST_F2_FAIL,
+  PRODUCT_LIST_F2_REQUEST,
+  PRODUCT_LIST_F2_SUCCESS,
   PRODUCT_UPDATE_REQUEST,
   PRODUCT_UPDATE_SUCCESS,
   PRODUCT_UPDATE_FAIL,
@@ -32,14 +38,30 @@ export const listProducts = (keyword = '', currentPage = 1) => async (dispatch) 
   }
 };
 export const listProductsP = () => async (dispatch) => {
-  dispatch({
-    type: PRODUCT_LISTP_REQUEST,
-  });
+  dispatch({ type: PRODUCT_LISTP_REQUEST });
   try {
     const { data } = await Axios.get(`/api/products/popular`);
     dispatch({ type: PRODUCT_LISTP_SUCCESS, payload: data });
   } catch (error) {
     dispatch({ type: PRODUCT_LISTP_FAIL, payload: error.message });
+  }
+};
+export const listProductsf1 = () => async (dispatch) => {
+  dispatch({ type: PRODUCT_LIST_F1_REQUEST });
+  try {
+    const { data } = await Axios.get(`/api/products/featured1`);
+    dispatch({ type: PRODUCT_LIST_F1_SUCCESS, payload: data });
+  } catch (error) {
+    dispatch({ type: PRODUCT_LIST_F1_FAIL, payload: error.message });
+  }
+};
+export const listProductsf2 = () => async (dispatch) => {
+  dispatch({ type: PRODUCT_LIST_F2_REQUEST });
+  try {
+    const { data } = await Axios.get(`/api/products/featured2`);
+    dispatch({ type: PRODUCT_LIST_F2_SUCCESS, payload: data });
+  } catch (error) {
+    dispatch({ type: PRODUCT_LIST_F2_FAIL, payload: error.message });
   }
 };
 

@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { listOrderMine } from '../../actions/orderActions';
 import LoadingBox from '../../components/LoadingBox';
 import MessageBox from '../../components/MessageBox';
-import Table from '../../components/table/Table';
+import Table from '../../components/Table';
+import './listPages.css';
 
 export default function OrderHistoryPage(props) {
   const orderMineList = useSelector((state) => state.orderMineList);
@@ -16,7 +18,7 @@ export default function OrderHistoryPage(props) {
 
   const renderBody = (order, index) => (
     <tr key={index}>
-      <td>{order._id}</td>
+      <td>{index}</td>
       <td>{order.createdAt.substring(0, 10)}</td>
       <td>{order.totalPrice.toFixed(2)}</td>
       <td>{order.isPaid ? order.paidAt.substring(0, 10) : 'No'}</td>
@@ -26,14 +28,10 @@ export default function OrderHistoryPage(props) {
           : 'No'}
       </td>
       <td>
-        <button
-          type="button"
-          className="small"
-          onClick={() => {
-            props.history.push(`/order/${order._id}`);
+        <button type="button" className="list__small_btn"
+          onClick={() => { props.history.push(`/order/${order._id}`);
           }}
-        >
-          Details
+        >Details
         </button>
       </td>
     </tr>
@@ -43,8 +41,11 @@ export default function OrderHistoryPage(props) {
     dispatch(listOrderMine());
   }, [dispatch]);
   return (
-    <div>
-      <h1>Order History</h1>
+    <div className="list__container">
+      <Link to='/'>
+            <button type="button" className="btn"> Go back</button>
+      </Link> 
+      <h1 className="list__title">Order History</h1>
       {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (

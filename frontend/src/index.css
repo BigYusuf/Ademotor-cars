@@ -744,21 +744,6 @@ h1,
     margin: 0 1.5rem;
     cursor: pointer;
   }
-  .fa-trash:before{
-      color: rgb(180, 58, 82); 
-      margin: 0 1.5rem;
-      cursor: pointer;
-  }
-  .fa-pen:before{
-      color: rgb(58, 137, 180);
-      margin: 0 1.5rem;
-      cursor: pointer;
-  }
-.table_image{
-    width: 50px;
-    height: 30px;
-    object-fit: contain;
-}
 
 .search{
     opacity: 1;

@@ -22,6 +22,7 @@ export default function ProductEditPage(props) {
   const [type, setType] = useState('');
   const [engine, setEngine] = useState('');
   const [oldNew, setOldNew] = useState('');
+  const [homeDisplay, setHomeDisplay] = useState('');
   const [description, setDescription] = useState('');
 
   const productDetails = useSelector((state) => state.productDetails);
@@ -49,6 +50,7 @@ export default function ProductEditPage(props) {
       setSpeed(product.speed);
       setEngine(product.engine);
       setOldNew(product.oldNew);
+      setOldNew(product.homeDisplay);
       setDescription(product.description);
     }
   }, [product, dispatch, productId, successUpdate, props.history]);
@@ -59,7 +61,7 @@ export default function ProductEditPage(props) {
           console.log("no file ");
            dispatch(
             updateProduct({
-               _id: productId, name, price, image:image, category,  model, speed, type, engine, oldNew, countInStock, description,
+               _id: productId, name, price, image:image, category,  model, speed, type, engine, oldNew, homeDisplay, countInStock, description,
             })
      );
     }else {
@@ -169,6 +171,17 @@ export default function ProductEditPage(props) {
             <div>
               <label htmlFor="oldNew">Old or New</label>
               <input id="oldNew" type="text" placeholder="Brand New or Fairly Used" value={oldNew} onChange={(e) => setOldNew(e.target.value)} ></input>
+            </div>
+            <div>
+              <label htmlFor="homeDisplay">Home display Section</label>
+              <input id="homeDisplay" type="radio"name={homeDisplay} value="popular" 
+              onChange={(e) => setHomeDisplay(e.target.value)} />Popular Section
+              <input id="homeDisplay" type="radio"name={homeDisplay} value="featured1" 
+              onChange={(e) => setHomeDisplay(e.target.value)} />Featured 1 Section
+              <input id="homeDisplay" type="radio"name={homeDisplay} value="featured2" 
+              onChange={(e) => setHomeDisplay(e.target.value)} />Featured 2 Section
+              <input id="homeDisplay" type="radio"name={homeDisplay} value="none" 
+              onChange={(e) => setHomeDisplay(e.target.value)} />Don't display on Home Screen
             </div>
             <div>
               <label htmlFor="countInStock">Count In Stock</label>

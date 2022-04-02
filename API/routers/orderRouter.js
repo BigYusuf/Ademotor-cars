@@ -126,7 +126,8 @@ orderRouter.put( '/:id/deliver', isAuth, isAdmin, expressAsyncHandler(async (req
       const updatedOrder = await order.save();
       const oAuth2Client = new google.auth.OAuth2(process.env.CLIENT_ID, process.env.CLIENT_SECRET, process.env.REDIRECT_URI)
       oAuth2Client.setCredentials({ refresh_token: process.env.REFRESH_TOKEN})
-
+      
+      console.log(order)
       async function sendMail(){
         try{
           const accessToken = await oAuth2Client.getAccessToken()

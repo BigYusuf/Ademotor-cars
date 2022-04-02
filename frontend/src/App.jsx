@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Route } from 'react-router-dom';
 import AdminRoute from './components/AdminRoute';
-import Navbar from './components/Navbar';
+//import Navbar from './components/Navbar';
 import PrivateRoute from './components/PrivateRoute';
 import HomePage from './pages/home_page/HomePage';
 import RegisterPage from './pages/RegisterPage';
@@ -27,7 +27,6 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-      <Navbar/>
         <Route path = '/' component = {HomePage} exact></Route>
         <Route path = '/login' component = {LoginPage}></Route>
         <Route path = '/register' component = {RegisterPage}></Route>

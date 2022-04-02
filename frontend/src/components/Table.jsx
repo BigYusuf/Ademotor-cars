@@ -1,6 +1,4 @@
-import React, {useState} from 'react'
-
-import './table.css'
+import React, {useState} from 'react';
 
 const Table = props => {
 
@@ -72,4 +70,4 @@ const Table = props => {
     )
 }
 
-export default Table
+export default Table;

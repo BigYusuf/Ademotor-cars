@@ -4,6 +4,7 @@ import Product from '../../components/Product';
 import LoadingBox from '../../components/LoadingBox';
 import MessageBox from '../../components/MessageBox';
 import Search from '../../components/Search';
+import Navbar from '../../components/Navbar';
 import { useDispatch, useSelector } from 'react-redux';
 import { listProducts } from '../../actions/productActions';
 import { Route } from 'react-router-dom';
@@ -30,7 +31,7 @@ export default function ViewAllProductPage({match}) {
   }
   return (
     <div className="products__container">
-      
+      <Navbar/>
       <div className="search">
         <Route render= {({history}) => <Search history ={history}/> }/>
       </div>

@@ -6,7 +6,7 @@ const productSchema = new mongoose.Schema(
   {
     name: { type: String, required: true},
     model: { type: String, required: true },
-    image: { type: String,default: 'Automatic'  },
+    image: { type: String, default: 'Automatic'  },
     category: { type: Array, required: true },
     description: { type: String, required: true },
     engine: { type: String, required: true },
@@ -15,6 +15,7 @@ const productSchema = new mongoose.Schema(
     year: { type: Number, required: true },
     price: { type: Number, required: true },
     oldNew: { type: String, required: true },
+    ShowUnder: { type: String, default: 'none' },
     rating: { type: Number, required: true, default: 0},
     numReviews: { type: Number, required: true, default: 0},
     countInStock: { type: Number, required: true, default: 0}

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { savePaymentMethod } from '../actions/cartActions';
 import CheckoutSteps from '../components/CheckoutSteps';
 
@@ -52,6 +53,9 @@ export default function PaymentPage(props) {
         </div>
         <div>
           <label />
+          <Link to='/'>
+            <button type="button" className="btn"> Go back</button>
+          </Link> 
           <button className="primary" type="submit">
             Continue
           </button>

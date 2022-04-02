@@ -5,6 +5,15 @@ const {
   PRODUCT_LISTP_REQUEST,
   PRODUCT_LISTP_SUCCESS,
   PRODUCT_LISTP_FAIL,
+  PRODUCT_LIST_F1_REQUEST,
+  PRODUCT_LIST_F1_SUCCESS,
+  PRODUCT_LIST_F1_FAIL,
+  PRODUCT_LIST_ALL_REQUEST,
+  PRODUCT_LIST_ALL_SUCCESS,
+  PRODUCT_LIST_ALL_FAIL,
+  PRODUCT_LIST_F2_REQUEST,
+  PRODUCT_LIST_F2_SUCCESS,
+  PRODUCT_LIST_F2_FAIL,
   PRODUCT_DETAILS_REQUEST,
   PRODUCT_DETAILS_SUCCESS,
   PRODUCT_DETAILS_FAIL,
@@ -48,6 +57,42 @@ export const productListPReducer = (state = { loading: true, products: [] }, act
     case PRODUCT_LISTP_SUCCESS:
       return { loading: false, products: action.payload };
     case PRODUCT_LISTP_FAIL:
+      return { loading: false, error: action.payload };
+    default:
+      return state;
+  }
+};
+export const productList_ALL_Reducer = (state = { loading: true, products: [] }, action) => {
+  switch (action.type) {
+    case PRODUCT_LIST_ALL_REQUEST:
+      return { loading: true };
+    case PRODUCT_LIST_ALL_SUCCESS:
+      return { loading: false, products: action.payload };
+    case PRODUCT_LIST_ALL_FAIL:
+      return { loading: false, error: action.payload };
+    default:
+      return state;
+  }
+};
+export const productList_F1_Reducer = (state = { loading: true, products: [] }, action) => {
+  switch (action.type) {
+    case PRODUCT_LIST_F1_REQUEST:
+      return { loading: true };
+    case PRODUCT_LIST_F1_SUCCESS:
+      return { loading: false, products: action.payload };
+    case PRODUCT_LIST_F1_FAIL:
+      return { loading: false, error: action.payload };
+    default:
+      return state;
+  }
+};
+export const productList_F2_Reducer = (state = { loading: true, products: [] }, action) => {
+  switch (action.type) {
+    case PRODUCT_LIST_F2_REQUEST:
+      return { loading: true };
+    case PRODUCT_LIST_F2_SUCCESS:
+      return { loading: false, products: action.payload };
+    case PRODUCT_LIST_F2_FAIL:
       return { loading: false, error: action.payload };
     default:
       return state;
