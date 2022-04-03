@@ -34,7 +34,7 @@ const Navbar = () => {
     
     };
     return (
-        <div>
+        <div className="header__container">
             <header className={!headeractive ? "header active" : "header"} >
 
                 <div id="menu-btn" onClick={handleBar} className={!active ? "fas fa-times": "fas fa-bars"}></div>
@@ -62,18 +62,18 @@ const Navbar = () => {
                     {userInfo.name }<i className="fa fa-caret-down"></i>{' '}
                   </Link>
                   <ul className="dropdown-contents">
-                    <li> <Link to="/profile">User Profile</Link> </li>
-                    <li>  <Link to="/orderhistory">Order History</Link></li>
+                    <li  className="dropdown-list"> <Link to="/profile">User Profile</Link> </li>
+                    <li  className="dropdown-list">  <Link to="/orderhistory">Order History</Link></li>
                     {userInfo.isAdmin && (
                       <>
                       <hr/>
-                    <li> <Link to="/dashboard">Dashboard</Link> </li>
-                    <li> <Link to="/productlist">Products</Link> </li>
-                    <li>  <Link to="/userlist">Users</Link> </li>
-                    <li>  <Link to="/orderlist">Orders</Link> </li>
+                    <li  className="dropdown-list"> <Link to="/dashboard">Dashboard</Link> </li>
+                    <li  className="dropdown-list"> <Link to="/productlist">Products</Link> </li>
+                    <li  className="dropdown-list">  <Link to="/userlist">Users</Link> </li>
+                    <li  className="dropdown-list">  <Link to="/orderlist">Orders</Link> </li>
                     </>
                       )}
-                    <li> <Link to="#signout" onClick={signoutHandler}> Sign Out </Link> </li>
+                    <li  className="dropdown-list"> <Link to="#signout" onClick={signoutHandler}> Sign Out </Link> </li>
                   </ul>
                 </div>
               ) : (

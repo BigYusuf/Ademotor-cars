@@ -12,22 +12,22 @@ export default function OrderHistoryPage(props) {
   const { loading, error, orders } = orderMineList;
   const dispatch = useDispatch();
 
-  const customerTableHead = ['ID', 'DATE', 'TOTAL', 'PAID', 'DELIVERED', 'ACTIONS']
+  const customerTableHead = ['UNIQUE ID', 'DATE', 'TOTAL', 'PAID', 'DELIVERED', 'ACTIONS']
 
   const renderHead = (order, index) => <th key={index}>{order}</th>
 
   const renderBody = (order, index) => (
     <tr key={index}>
-      <td>{index}</td>
-      <td>{order.createdAt.substring(0, 10)}</td>
-      <td>{order.totalPrice.toFixed(2)}</td>
-      <td>{order.isPaid ? order.paidAt.substring(0, 10) : 'No'}</td>
-      <td>
+      <td className="table__data" data-label="UNIQUE ID">{order._id}</td>
+      <td className="table__data" data-label="DATE">{order.createdAt.substring(0, 10)}</td>
+      <td className="table__data" data-label="TOTAL">{order.totalPrice.toFixed(2)}</td>
+      <td className="table__data" data-label="PAID">{order.isPaid ? order.paidAt.substring(0, 10) : 'No'}</td>
+      <td className="table__data" data-label="DELIVERED">
         {order.isDelivered
           ? order.deliveredAt.substring(0, 10)
           : 'No'}
       </td>
-      <td>
+      <td className="table__data" data-label="ACTIONS">
         <button type="button" className="list__small_btn"
           onClick={() => { props.history.push(`/order/${order._id}`);
           }}

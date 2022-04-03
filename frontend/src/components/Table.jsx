@@ -29,12 +29,12 @@ const Table = props => {
 
     return (
         <div>
-            <div className="table-wrapper">
-                <table>
+            <div className="table__container">
+                <table className="table__wrapper">
                     {
                         props.headData && props.renderHead ? (
-                            <thead>
-                                <tr>
+                            <thead className="table__head">
+                                <tr className="table__row">
                                     {
                                         props.headData.map((item, index) => props.renderHead(item, index))
                                     }
@@ -44,7 +44,7 @@ const Table = props => {
                     }
                     {
                         props.bodyData && props.renderBody ? (
-                            <tbody>
+                            <tbody className="table__body">
                                 {
                                     dataShow.map((item, index) => props.renderBody(item, index))
                                 }

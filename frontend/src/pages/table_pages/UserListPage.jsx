@@ -21,13 +21,13 @@ const customerTableHead = ['ID', 'NAME', 'EMAIL', 'IS SELLER', 'IS ADMIN', 'ACTI
 const renderHead = (user, index) => <th key={index}>{user}</th>
 
 const renderBody = (user, index) => (
-  <tr key={index}>
-  <td>{user._id}</td>
-  <td>{user.name}</td>
-  <td>{user.email}</td>
-  <td>{user.isSeller ? 'YES' : ' NO'}</td>
-  <td>{user.isAdmin ? 'YES' : 'NO'}</td>
-  <td>
+  <tr className="table__row" key={index}>
+  <td className="table__data" data-label="ID">{user._id}</td>
+  <td className="table__data" data-label="NAME">{user.name}</td>
+  <td className="table__data" data-label="EMAIL">{user.email}</td>
+  <td className="table__data" data-label="SELLER">{user.isSeller ? 'YES' : ' NO'}</td>
+  <td className="table__data" data-label="ADMIN">{user.isAdmin ? 'YES' : 'NO'}</td>
+  <td className="table__data" data-label="ACTIONS">
     <i type="" className="fas fa-pen" onClick={() => props.history.push(`/user/${user._id}/edit`)}></i>
     <i type="" className="fas fa-trash" onClick={() => deleteHandler(user)}></i>
   </td>

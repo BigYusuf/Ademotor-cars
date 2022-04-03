@@ -20,18 +20,18 @@ export default function OrderListPage(props) {
   const renderHead = (order, index) => <th key={index}>{order}</th>
 
   const renderBody = (order, index) => (
-    <tr key={index}>
-      <td>{order._id}</td>
-      <td>{order.user.name}</td>
-      <td>{order.createdAt.substring(0, 10)}</td>
-      <td>{order.totalPrice.toFixed(2)}</td>
-      <td>{order.isPaid ? order.paidAt.substring(0, 10) : 'No'}</td>
-      <td>
+    <tr className="table__row" key={index}>
+      <td className="table__data" data-label="ID">{order._id}</td>
+      <td className="table__data" data-label="USER">{order.user.name}</td>
+      <td className="table__data" data-label="DATE">{order.createdAt.substring(0, 10)}</td>
+      <td className="table__data" data-label="TOTAL">{order.totalPrice.toFixed(2)}</td>
+      <td className="table__data" data-label="PAID">{order.isPaid ? order.paidAt.substring(0, 10) : 'No'}</td>
+      <td className="table__data" data-label="DELIVERED">
         {order.isDelivered
           ? order.deliveredAt.substring(0, 10)
           : 'No'}
       </td>
-      <td>
+      <td className="table__data" data-label="ACTIONS">
         <button type="button" className="list__small_btn" onClick={() => {
             props.history.push(`/order/${order._id}`);
           }}

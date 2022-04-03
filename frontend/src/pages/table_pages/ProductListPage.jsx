@@ -30,14 +30,14 @@ export default function ProductListPage(props) {
     const renderHead = (product, index) => <th key={index}>{product}</th>
 
     const renderBody = (product, index) => (
-      <tr key={index}>
-        <td>{product._id}</td>
-        <td><img className="table__image" alt="" src={product.image}/></td>
-        <td>{product.name}</td>
-        <td>{product.price}</td>
-        <td>{product.category}</td>
-        <td>{product.model}</td>
-        <td>
+      <tr className="table__row" key={index}>
+        <td className="table__data" data-label="ID">{product._id}</td>
+        <td className="table__data" data-label="IMAGE"><img className="table__image" alt="" src={product.image}/></td>
+        <td className="table__data" data-label="NAME">{product.name}</td>
+        <td className="table__data" data-label="PRICE">{product.price}</td>
+        <td className="table__data" data-label="CATEGORY">{product.category}</td>
+        <td className="table__data" data-label="BRAND">{product.model}</td>
+        <td className="table__data" data-label="ACTION">
           <i type="" className="fas fa-pen" onClick={() => props.history.push(`/product/${product._id}/edit`) }></i>
           <i type="" className="fas fa-trash" onClick={() => deleteHandler(product)}> </i>
         </td>
@@ -48,7 +48,6 @@ export default function ProductListPage(props) {
   useEffect(() => {
     if (successCreate) {
       dispatch({ type: PRODUCT_CREATE_RESET });
-    //  props.history.push(`/product/${createdProduct._id}/edit`);
     props.history.push('/productlist');
     }
     if (successDelete) {

@@ -1,5 +1,5 @@
 .list__container{
-    margin: 0 2rem 0 2rem
+    margin: 0 2rem 0 2rem;
 }
 .list__title{
     font-size: 1.8rem;
@@ -16,7 +16,7 @@
 }
 
 /*table css*/
-.table-wrapper {
+.table__container {
     overflow-y: auto;
 }
 table {
@@ -83,4 +83,42 @@ tbody > tr:hover {
     color: rgb(58, 137, 180);
     margin: 0 1.5rem;
     cursor: pointer;
+}
+
+
+@media (max-width:850px){
+    .table__head{
+        display: none;
+    }
+    .table,
+    .table__body,
+    .table__row,
+    .table__data{
+        display: block;
+        width: 100%;
+    }
+    .table__row{
+        margin-bottom: 1rem;
+    }
+    .table__data{
+        text-align: center;
+        padding-left: 50%;
+        position: relative;
+    }
+    .table__data::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 1rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: left;
+    }
+}
+
+@media (max-width:500px){
+    .table__data{
+        text-align: left;
+    }
 }
