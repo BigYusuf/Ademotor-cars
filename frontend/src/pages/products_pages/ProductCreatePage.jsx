@@ -7,8 +7,6 @@ import MessageBox from '../../components/MessageBox';
 import app from '../../firebase';
 import { getStorage, ref, uploadBytesResumable, getDownloadURL} from "firebase/storage";
 import { PRODUCT_CREATE_RESET} from '../../constants/productConstants';
-import '../style2.css'
-import './style.css'
 
 export default function ProductCreatePage(props) {
   const [name, setName] = useState('');

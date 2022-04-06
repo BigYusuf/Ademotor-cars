@@ -7,7 +7,6 @@ import MessageBox from '../../components/MessageBox';
 import app from '../../firebase';
 import { getStorage, ref, uploadBytesResumable, getDownloadURL} from "firebase/storage";
 import './productMain.css';
-import './style.css';
 import { PRODUCT_UPDATE_RESET } from '../../constants/productConstants';
 
 export default function ProductEditPage(props) {
