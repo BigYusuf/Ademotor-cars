@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import Pagination from 'react-js-pagination';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {deleteProduct, listProducts} from '../../actions/productActions';
+import {deleteProduct, listProductsP} from '../../actions/productActions';
 import LoadingBox from '../../components/LoadingBox';
 import { Link } from 'react-router-dom';
 import Table from '../../components/Table';
@@ -11,9 +10,8 @@ import { PRODUCT_CREATE_RESET, PRODUCT_DELETE_RESET} from '../../constants/produ
 import './listPages.css'
 
 export default function ProductListPage(props) {
-  const [currentPage, setCurrentPage] = useState(1);
-  const productList = useSelector((state) => state.productList);
-  const { loading, error, products, productsCount, resPerPage } = productList;
+  const productList = useSelector((state) => state.productListP);
+  const { loading, error, products } = productList;
 
   const productCreate = useSelector((state) => state.productCreate);
   const { loading: loadingCreate, error: errorCreate, success: successCreate, product: createdProduct} = productCreate;
@@ -21,9 +19,6 @@ export default function ProductListPage(props) {
   const productDelete = useSelector((state) => state.productDelete);
   const { loading: loadingDelete, error: errorDelete, success: successDelete} = productDelete;
   
-  function setCurrentPageNo(pageNumber){
-    setCurrentPage(pageNumber)
-  }
   const dispatch = useDispatch();
     const customerTableHead = ['ID', 'IMAGE', 'NAME', 'PRICE', 'CATEGORY', 'BRAND', 'ACTIONS']
  
@@ -53,7 +48,7 @@ export default function ProductListPage(props) {
     if (successDelete) {
       dispatch({ type: PRODUCT_DELETE_RESET });
     }
-    dispatch(listProducts());
+    dispatch(listProductsP());
   }, [createdProduct, dispatch, props.history, successCreate, successDelete]);
 
   const deleteHandler = (product) => {
@@ -92,23 +87,6 @@ export default function ProductListPage(props) {
               bodyData={products}
               renderBody={(product, index) => renderBody(product, index)}
           />
-         
-      )}
-      {resPerPage <= productsCount && (
-            <div className="pagination">
-              <Pagination 
-              activePage ={currentPage}
-              itemsCountPerPage={resPerPage}
-              totalItemsCount={productsCount}
-              onChange={setCurrentPageNo}
-              nextPageText={'Next'}
-              prevPageText={'Prev'}
-              firstPageText={'First'}
-              lastPageText={'Last'}
-              itemClass='pagination1'
-              linkClass='pagination2'
-              />
-            </div>
       )}
     </div>
   );

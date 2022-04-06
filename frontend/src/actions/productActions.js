@@ -40,7 +40,7 @@ export const listProducts = (keyword = '', currentPage = 1) => async (dispatch) 
 export const listProductsP = () => async (dispatch) => {
   dispatch({ type: PRODUCT_LISTP_REQUEST });
   try {
-    const { data } = await Axios.get(`/api/products/popular`);
+    const { data } = await Axios.get(`/api/allproducts`);
     dispatch({ type: PRODUCT_LISTP_SUCCESS, payload: data });
   } catch (error) {
     dispatch({ type: PRODUCT_LISTP_FAIL, payload: error.message });

@@ -1,7 +1,6 @@
 import React from 'react';
 import {BrowserRouter, Route } from 'react-router-dom';
 import AdminRoute from './components/AdminRoute';
-//import Navbar from './components/Navbar';
 import PrivateRoute from './components/PrivateRoute';
 import HomePage from './pages/home_page/HomePage';
 import RegisterPage from './pages/RegisterPage';
@@ -10,8 +9,8 @@ import UserListPage from './pages/table_pages/UserListPage';
 import UserEditPage from './pages/UserEditPage';
 import ProductPage from './pages/ProductPage';
 import ProfilePage from './pages/ProfilePage';
-import ProductEditPage from './pages/ProductEditPage';
-import ProductCreatePage from './pages/ProductCreatePage';
+import ProductEditPage from './pages/products_pages/ProductEditPage';
+import ProductCreatePage from './pages/products_pages/ProductCreatePage';
 import ProductListPage from './pages/table_pages/ProductListPage';
 import ViewAllProductPage from './pages/allproducts_page/ViewAllProductPage';
 import ShippingAddressPage from './pages/ShippingAddressPage';

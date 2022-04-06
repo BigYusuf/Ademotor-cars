@@ -3,6 +3,7 @@ const dotenv = require('dotenv');
 const productRouter = require('./routers/productRouter');
 const userRouter = require('./routers/userRouter');
 const orderRouter = require('./routers/orderRouter');
+const allproductRouter = require('./routers/allproductRouter');
 const connectDatabase = require('../API/config/database');
 
 const app = express();
@@ -24,6 +25,7 @@ connectDatabase();
 app.use('/api/users', userRouter);
 app.use('/api/products', productRouter);
 app.use('/api/orders', orderRouter);
+app.use('/api/allproducts', allproductRouter);// testing purpose remove it later
 
 app.get('/api/config/paypal', (req, res) => {
   res.send(process.env.PAYPAL_CLIENT_ID || 'sb');

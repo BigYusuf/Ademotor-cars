@@ -4,7 +4,7 @@ import {Slide1} from './Slides';
 import LoadingBox from './LoadingBox';
 import MessageBox from './MessageBox';
 import { useDispatch, useSelector } from 'react-redux';
-import { listProductsP } from '../actions/productActions';
+import { listProducts } from '../actions/productActions';
 import Slider from "react-slick";
 // Import css files
 import "slick-carousel/slick/slick.css";
@@ -45,11 +45,11 @@ export default function ProductHome() {
     };
 
   const dispatch = useDispatch();
-  const productList = useSelector((state) => state.productListP);
+  const productList = useSelector((state) => state.productList);
   const { loading, error, products } = productList;
 
   useEffect(() => {
-    dispatch(listProductsP());
+    dispatch(listProducts());
   }, [dispatch]);
 
    return (
