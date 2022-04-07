@@ -1,10 +1,10 @@
 const express = require('express');
 const dotenv = require('dotenv');
-const productRouter = require('./routers/productRouter');
-const userRouter = require('./routers/userRouter');
-const orderRouter = require('./routers/orderRouter');
-const allproductRouter = require('./routers/allproductRouter');
-const connectDatabase = require('../API/config/database');
+const productRouter = require('./API/routers/productRouter');
+const userRouter = require('./API/routers/userRouter');
+const orderRouter = require('./API/routers/orderRouter');
+const allproductRouter = require('./API/routers/allproductRouter');
+const connectDatabase = require('./API/config/database');
 
 const app = express();
 app.use(express.json());
