@@ -4,7 +4,7 @@
   "description": "car website backend/ api",
   "main": "server.js",
   "scripts": {
-    "start": "node API/server.js",
+    "start": "node server.js",
     "heroku-postbuild": "cd frontend && npm install && npm run build"
   },
   "keywords": [

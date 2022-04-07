@@ -5,7 +5,7 @@ const dotenv = require('dotenv');
 
 //setting up config file
 
-dotenv.config({path:'API/config/config.env'});
+dotenv.config();
 
 const connectionString= process.env.MONGO_URL
 const connectDatabase = () => {
