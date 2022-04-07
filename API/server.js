@@ -1,10 +1,11 @@
 const express = require('express');
 const dotenv = require('dotenv');
-const productRouter = require('./API/routers/productRouter');
-const userRouter = require('./API/routers/userRouter');
-const orderRouter = require('./API/routers/orderRouter');
-const allproductRouter = require('./API/routers/allproductRouter');
-const connectDatabase = require('./API/config/database');
+const productRouter = require('./routers/productRouter');
+const userRouter = require('./routers/userRouter');
+const orderRouter = require('./routers/orderRouter');
+const allproductRouter = require('./routers/allproductRouter');
+const connectDatabase = require('./config/database');
+const path = require('path');
 
 const app = express();
 app.use(express.json());
@@ -33,7 +34,11 @@ app.use(express.static(path.join(__dirname, "/frontend/build")));
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, "/frontend/build", 'index.html'))
 });
-
+/*
+app.use(express.static(path.join(__dirname, '/frontend/build')));
+app.get('*', (req, res) =>
+  res.sendFile(path.join(__dirname, '/frontend/build/index.html'))
+);*/
 app.get('/api/config/paypal', (req, res) => {
   res.send(process.env.PAYPAL_CLIENT_ID || 'sb');
 });
