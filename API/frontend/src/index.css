@@ -588,13 +588,13 @@ h1,
     font-size: 1.7rem;
 }
 
-.contact .row{
+.contact .contact__wrapper{
     display: flex;
     flex-wrap: wrap;
     gap:1.5rem;
 }
 
-.contact .row .map{
+.contact .contact__wrapper .mymap{
     flex:1 1 42rem;
     width: 100%;
     padding:2rem;
@@ -603,7 +603,7 @@ h1,
     border-radius: .5rem;
 }
 
-.contact .row form{
+.contact .contact__wrapper form{
     padding:2rem;
     flex:1 1 42rem;
     box-shadow: var(--box-shadow);
@@ -612,13 +612,13 @@ h1,
     border-radius: .5rem;
 }
 
-.contact .row form h3{
+.contact .contact__wrapper form h3{
     font-size: 3rem;
     color:var(--black);
     padding-bottom: 1rem;
 }
 
-.contact .row form .box{
+.contact .contact__wrapper form .box{
     width:100%;
     border-radius: .5rem;
     padding:1rem 1.2rem;
@@ -628,7 +628,7 @@ h1,
     margin:.7rem 0;
 }
 
-.contact .row form textarea{
+.contact .contact__wrapper form textarea{
     height:15rem;
     resize: none;
 }
