@@ -22,6 +22,7 @@
     "redux": "^4.1.2",
     "redux-thunk": "^2.4.1",
     "slick-carousel": "^1.8.1",
+    "timeago.js": "^4.0.2",
     "web-vitals": "^1.1.2",
     "words-to-numbers": "^1.5.1"
   },

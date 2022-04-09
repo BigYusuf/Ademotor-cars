@@ -8,6 +8,7 @@ import LoadingBox from '../../components/LoadingBox';
 import MessageBox from '../../components/MessageBox';
 import { ORDER_DELIVER_RESET, ORDER_PAY_RESET} from '../../constants/orderConstants';
 import Navbar from '../../components/Navbar';
+import {format} from "timeago.js"
 
 export default function OrderPage(props) {
   const orderId = props.match.params.id;
@@ -86,7 +87,7 @@ export default function OrderPage(props) {
                     </p>
                     {order.isDelivered ? (
                       <MessageBox variant="success">
-                        Delivered at {order.deliveredAt}
+                        Delivered {format(order.deliveredAt)}
                       </MessageBox>
                     ) : (
                       <MessageBox variant="danger">Not Delivered</MessageBox>
@@ -101,7 +102,7 @@ export default function OrderPage(props) {
                     </p>
                     {order.isPaid ? (
                       <MessageBox variant="success">
-                        Paid at {order.paidAt}
+                        Paid {format(order.paidAt)}
                       </MessageBox>
                     ) : (
                       <MessageBox variant="danger">Not Paid</MessageBox>
