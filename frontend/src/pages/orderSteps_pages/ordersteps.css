@@ -1,0 +1,24 @@
+.order__container{
+    margin-top: 11rem;
+}
+.btn__group{
+    display: flex;
+}
+.btn__group2{
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem;
+}
+.btn2{
+    margin-left: 2rem;
+}
+.shoppingLink{
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-right: 2rem;
+}
+.order__top{
+    display: flex;
+    justify-content: center;
+}

@@ -4,8 +4,9 @@
   "description": "car website backend/ api",
   "main": "server.js",
   "scripts": {
-    "start": "node API/server.js",
-    "heroku-postbuild": "cd API && cd frontend && npm install && npm run build"
+    "start": "nodemon API/server.js",
+    "dev": "SET NODE_ENV= DEVELOPMENT & nodemon API/server.js",
+    "prod": "SET NODE_ENV= PRODUCTION & nodemon API/server.js"
   },
   "keywords": [
     "api"

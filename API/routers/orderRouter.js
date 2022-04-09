@@ -5,11 +5,6 @@ const {google} =require('googleapis');
 const nodemailer =require('nodemailer');
 const Order =require('../models/orderModel');
 const { isAuth, isAdmin, payOrderEmailTemplate, deliverOrderEmailTemplate } = require('../utils/utils');
-const dotenv = require('dotenv');
-
-//setting up config file
-
-dotenv.config();
 
 const orderRouter = express.Router();
 orderRouter.get('/', isAuth, isAdmin, expressAsyncHandler(async (req, res) => {
