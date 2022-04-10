@@ -48,7 +48,7 @@ const NavbarHome = () => {
                         <a href="#featured"onClick={handleBar}>featured</a>
                         
                 </nav>
-            <div>
+            <div className="header__right">
                 <Link to="/cart" className="header__cart"> Cart
                 {cartItems.length >= 0 && 
                 ( <span className="badge">{cartItems.length}</span> )}
@@ -56,9 +56,9 @@ const NavbarHome = () => {
 
                   {userInfo ? (
                 <div className="dropdown">
-                  <Link to="#"className="dropdown-name" >
-                    {userInfo.name }<i className="fa fa-caret-down"></i>{' '}
-                  </Link>
+                  <i className="dropdown-name">
+                    {userInfo.name}<i className="fa fa-caret-down"></i>{' '}
+                  </i>
                   <ul className="dropdown-contents">
                     <li  className="dropdown-list"> <Link to="/profile">User Profile</Link> </li>
                     <li  className="dropdown-list">  <Link to="/orderhistory">Order History</Link></li>

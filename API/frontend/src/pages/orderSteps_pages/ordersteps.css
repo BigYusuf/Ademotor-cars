@@ -21,3 +21,51 @@
     display: flex;
     justify-content: center;
 }
+.payOrder__wrapper{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+.payOrder__body{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.payOrder__left{
+    flex: 1 1 25rem;
+}
+
+.payOrder__right {
+    flex: 2 1 50rem;
+  }
+.payOrder__box {
+    min-width: 30rem;
+ }
+
+  /* Checkout Steps */
+  .checkout-steps > div {
+    border-top: 0.3rem #c0c0c0 solid;
+    color: #c0c0c0;
+    flex: 1;
+    padding: 1rem;
+    font-weight: bold;
+  }
+  .checkout-steps > div.active {
+    border-top-color: #f08000;
+    color: #f08000;
+  }
+
+
+
+  @media (max-width:500px){
+
+    .checkout-steps > div {
+        font-size: 1rem;
+    }
+    
+    .payOrder__box {
+        min-width: 10rem;
+    }
+  }

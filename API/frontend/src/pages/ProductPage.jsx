@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { detailsProduct } from '../actions/productActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
+import Navbar from '../components/Navbar';
 import Rating from '../components/Rating';
 
 export default function ProductPage(props) {
@@ -21,6 +22,7 @@ export default function ProductPage(props) {
   };
   return (
     <div>
+      <Navbar/>
       {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (

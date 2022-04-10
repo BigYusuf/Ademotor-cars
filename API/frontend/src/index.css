@@ -118,7 +118,9 @@ section{
 .header .navbar a:hover{
     color:var(--yellow);
 }
-
+.header__right{
+    display: flex;
+}
 #login-btn .btn{
     margin-top: 0;
 }

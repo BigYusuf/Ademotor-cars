@@ -33,7 +33,7 @@ export default function PlaceOrderPage(props) {
     }
   }, [dispatch, order, props.history, success]);
   return (
-    <div>
+    <div className="payOrder__container">
       <CheckoutSteps step1 step2 step3 step4></CheckoutSteps>
       <div className="btn__group2">
         <Link to='/payment'>
@@ -43,8 +43,8 @@ export default function PlaceOrderPage(props) {
          <span className="shoppingLink">Continue Shopping</span>
         </Link>
       </div>
-      <div className="row top">
-        <div className="col-2">
+      <div className="payOrder__wrapper">
+        <div className="payOrder__right">
           <ul>
             <li>
               <div className="card card-body">
@@ -71,15 +71,11 @@ export default function PlaceOrderPage(props) {
                 <ul>
                   {cart.cartItems.map((item) => (
                     <li key={item.product}>
-                      <div className="row">
+                      <div className="payOrder__body">
                         <div>
-                          <img
-                            src={item.image}
-                            alt={item.name}
-                            className="small"
-                          ></img>
+                          <img src={item.image} alt={item.name} className="small"></img>
                         </div>
-                        <div className="min-30">
+                        <div className="payOrder__box">
                           <Link to={`/product/${item.product}`}>
                             {item.name}
                           </Link>
@@ -96,32 +92,32 @@ export default function PlaceOrderPage(props) {
             </li>
           </ul>
         </div>
-        <div className="col-1">
+        <div className="payOrder__left">
           <div className="card card-body">
             <ul>
               <li>
                 <h2>Order Summary</h2>
               </li>
               <li>
-                <div className="row">
+                <div className="payOrder__body">
                   <div>Items</div>
                   <div>${cart.itemsPrice.toFixed(2)}</div>
                 </div>
               </li>
               <li>
-                <div className="row">
+                <div className="payOrder__body">
                   <div>Shipping</div>
                   <div>${cart.shippingPrice.toFixed(2)}</div>
                 </div>
               </li>
               <li>
-                <div className="row">
+                <div className="payOrder__body">
                   <div>Tax</div>
                   <div>${cart.taxPrice.toFixed(2)}</div>
                 </div>
               </li>
               <li>
-                <div className="row">
+                <div className="payOrder__body">
                   <div>
                     <strong> Order Total</strong>
                   </div>
