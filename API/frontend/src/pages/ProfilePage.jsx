@@ -77,19 +77,14 @@ export default function ProfilePage() {
             </div>
             <div>
               <label htmlFor="password">Password</label>
-              <input
-                id="password"
-                type="password"
-                placeholder="Enter password"
+              <input id="password" type="password" placeholder="Enter password"
                 onChange={(e) => setPassword(e.target.value)} className="box"
               ></input>
             </div>
             <div>
               <label htmlFor="confirmPassword">confirm Password</label>
               <input
-                id="confirmPassword"
-                type="password"
-                placeholder="Enter confirm password"
+                id="confirmPassword" type="password" placeholder="Enter confirm password"
                 onChange={(e) => setConfirmPassword(e.target.value)} className="box"
               ></input>
               {/*password !== confirmPassword 
@@ -99,9 +94,7 @@ export default function ProfilePage() {
             </div>
             <div>
               <label />
-              <button className="btn" type="submit">
-                Update
-              </button>
+              <button className="btn" type="submit">Update</button>
             </div>
           </>
         )}

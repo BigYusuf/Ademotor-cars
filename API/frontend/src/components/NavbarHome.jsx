@@ -1,14 +1,12 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { signout } from '../actions/userActions';
-
 import { Link } from 'react-router-dom';
 
 const NavbarHome = () => {
     const [active, setActive] = useState("false");
     const [headeractive, setHeaderActive] = useState("false");
     
-  
     const userSignin = useSelector((state) => state.userSignin);
     const { userInfo } = userSignin;
     
@@ -40,13 +38,11 @@ const NavbarHome = () => {
                 <div id="menu-btn" onClick={handleBar} className={!active ? "fas fa-times": "fas fa-bars"}></div>
                 <Link to="/" className="logo"> <span>ade</span>Motors </Link>
 
-                <nav className={!active ? "navbar active" : "navbar"}>
-                    
-                        <Link to="/"onClick={handleBar}>home</Link>
-                        <a href="#vehicles"onClick={handleBar}>vehicles</a>
-                        <a href="#services"onClick={handleBar}>services</a>
-                        <a href="#featured"onClick={handleBar}>featured</a>
-                        
+                <nav className={!active ? "navbar active" : "navbar"}>                    
+                  <Link to="/"onClick={handleBar}>home</Link>
+                  <a href="#vehicles"onClick={handleBar}>vehicles</a>
+                  <a href="#services"onClick={handleBar}>services</a>
+                  <a href="#featured"onClick={handleBar}>featured</a>
                 </nav>
             <div className="header__right">
                 <Link to="/cart" className="header__cart"> Cart

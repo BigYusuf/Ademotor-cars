@@ -39,10 +39,10 @@
 
 .payOrder__right {
     flex: 2 1 50rem;
-  }
+}
 .payOrder__box {
     min-width: 30rem;
- }
+}
 
   /* Checkout Steps */
   .checkout-steps > div {
@@ -60,11 +60,9 @@
 
 
   @media (max-width:500px){
-
     .checkout-steps > div {
         font-size: 1rem;
     }
-    
     .payOrder__box {
         min-width: 10rem;
     }
