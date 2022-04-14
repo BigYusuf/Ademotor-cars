@@ -20,7 +20,6 @@ process.on('uncaughtException', err =>{
     console.log(`Shutting down the server due to Uncaught exception`);
     process.exit(1)
 })
-
 //setting up config file
 dotenv.config();
 //connecting to connectDatabase
