@@ -11,10 +11,7 @@ const path = require('path');
 const app = express();
 app.use(express.json());
 //app.use(cors({credentials: true, origin: "http://localhost:3000"}));
-app.use(cors({ credentials: true, 
-  origin: "https://car-shop-ademoto.herokuapp.com",
-  optionsSuccessStatus: 200 
-}));
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
 //HAndle Uncaught exceptions
@@ -39,13 +36,13 @@ app.get('/api/config/paypal', (req, res) => {
 });
 
 // --------------------------deployment------------------------------
-const __dirname = path.resolve();
+//const __dirname = path.resolve();
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "/frontend/build")));
 
   app.get("*", (req, res) =>
-    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
+  res.sendFile(path.join(__dirname, '/frontend/build/index.html'))
   );
 } else {
   app.get("/", (req, res) => {
@@ -58,9 +55,6 @@ if (process.env.NODE_ENV === "production") {
   app.get('*', (req, res) =>
     res.sendFile(path.join(__dirname, '/frontend/build/index.html'))
   );
-// app.get('/', (req, res) => {
-//   res.send('Server is ready');
-// });
 */
 app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
