@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const dotenv = require('dotenv');
 const productRouter = require('./routers/productRouter');
 const userRouter = require('./routers/userRouter');
@@ -9,6 +10,8 @@ const path = require('path');
 
 const app = express();
 app.use(express.json());
+//app.use(cors({credentials: true, origin: "http://localhost:3000"}));
+app.use(cors({ credentials: true, origin: "https://car-shop-ademoto.herokuapp.com"}));
 app.use(express.urlencoded({ extended: true }));
 
 //HAndle Uncaught exceptions
@@ -32,11 +35,10 @@ app.get('/api/config/paypal', (req, res) => {
   res.send(process.env.PAYPAL_CLIENT_ID || 'sb');
 });
 
-
-app.use(express.static(path.join(__dirname, '/frontend/build')));
-app.get('*', (req, res) =>
-  res.sendFile(path.join(__dirname, '/frontend/build/index.html'))
-);
+  app.use(express.static(path.join(__dirname, '/frontend/build')));
+  app.get('*', (req, res) =>
+    res.sendFile(path.join(__dirname, '/frontend/build/index.html'))
+  );
 // app.get('/', (req, res) => {
 //   res.send('Server is ready');
 // });
