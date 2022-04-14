@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { memo, useState } from 'react'
 
 const Search = ({history}) => {
     const [keyword, setKeyword] = useState()
@@ -26,4 +26,4 @@ const Search = ({history}) => {
     )
 }
 
-export default Search
+export default memo(Search)

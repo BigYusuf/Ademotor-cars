@@ -1,4 +1,5 @@
 //import Axios from 'axios';
+import {axiosInstance} from '../../config.js';
 import { PayPalButton } from 'react-paypal-button-v2';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -8,7 +9,6 @@ import LoadingBox from '../../components/LoadingBox';
 import MessageBox from '../../components/MessageBox';
 import { ORDER_DELIVER_RESET, ORDER_PAY_RESET} from '../../constants/orderConstants';
 import Navbar from '../../components/Navbar';
-import {axiosInstance} from '../../config.js';
 import {format} from "timeago.js"
 
 export default function OrderPage(props) {

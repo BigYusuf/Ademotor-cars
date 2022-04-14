@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {memo, useState} from 'react';
 
 const Table = props => {
 
@@ -70,4 +70,4 @@ const Table = props => {
     )
 }
 
-export default Table;
+export default memo(Table);

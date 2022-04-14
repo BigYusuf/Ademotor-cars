@@ -1,14 +1,13 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {Link} from 'react-router-dom';
 import Rating from "./Rating";
 
 
 
-export const Slide1 = (props) => {
+export const Slide1 = memo((props) => {
    
 const {product} =props;
   return (
-   
           <div className="slick-wrapper" key={product._id}>
           <div className="swiper-slide box" >
                 <Link to={`/product/${product._id}`}>
@@ -31,9 +30,9 @@ const {product} =props;
       </div>
       
   );
-}
+})
   
-export const Slide2 = (props) => {
+export const Slide2 = memo((props) => {
    
   const {product} =props;
   return (
@@ -52,9 +51,9 @@ export const Slide2 = (props) => {
         </div>
       </div>
       );
-}
+})
 
-export const Slide3 = (props) => {
+export const Slide3 = memo((props) => {
    
   const {user} =props;
   return (
@@ -70,4 +69,4 @@ export const Slide3 = (props) => {
       </div>
     </div>
       );
-}
+})

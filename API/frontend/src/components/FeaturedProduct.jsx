@@ -17,8 +17,8 @@ export default function FeaturedProduct() {
     infinite: true,
     centerMode: true,
     centerPadding: "0px",
-    autoplay: false,
-    speed: 500,
+    autoplay: true,
+    speed: 700,
     slidesToShow: 3,
     slidesToScroll: 1,
     responsive: [
@@ -38,7 +38,6 @@ export default function FeaturedProduct() {
        breakpoint: 480,
        settings: {
          slidesToShow: 1,
-         centerPadding: "0px",
        }
      }
     ]

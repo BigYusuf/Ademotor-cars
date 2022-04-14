@@ -20,7 +20,6 @@ const Intro = () => {
 
     return (
         <div>
-                        
             <section className="home"onMouseLeave={mouseLeave} id="home"onMouseMove={mouseMove}>
 
             <h3 data-speed="-2" className="home-parallax">find your car</h3>

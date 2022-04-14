@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import { Link } from 'react-router-dom';
 
 const Service = () => {
@@ -52,11 +52,10 @@ const Service = () => {
             </div>
 
         </div>
-
         </section>
 
 
     )
 }
 
-export default Service
+export default memo(Service)

@@ -1,22 +1,19 @@
-import React from 'react'
+import React, {memo} from 'react'
 
 const NewsLetter = () => {
     return (
-        <div>
-            
-<section className="newsletter">
+        <section className="newsletter">
 
-<h3>subscribe for latest updates</h3>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, suscipit.</p>
+        <h3>subscribe for latest updates</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, suscipit.</p>
 
-<form action="">
-    <input type="email" placeholder="enter your email"></input>
-    <input type="submit" value="subscribe"></input>
-</form>
+        <form action="">
+            <input type="email" placeholder="enter your email"></input>
+            <input type="submit" value="subscribe"></input>
+        </form>
 
-</section>
-        </div>
+        </section>
     )
 }
 
-export default NewsLetter
+export default memo(NewsLetter)

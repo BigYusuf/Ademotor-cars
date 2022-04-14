@@ -39,40 +39,19 @@ const Review = () => {
      }
     ]
     };
-     // const dispatch = useDispatch();
-    //  const userList = useSelector((state) => state.userList);
-      //const { loading, error } = userList;
-    
- // useEffect(() => {
-   // dispatch(listUsers());
- // }, [dispatch]);
+ 
     return (
-        <div>
-           {/* {loading ? (
-                <LoadingBox></LoadingBox>
-            ) : error ? (
-                <MessageBox variant="danger">{error}</MessageBox>
-            ) : (*/}
             <section className="reviews" id="reviews">
-
             <h1 className="heading"> client's <span>review</span> </h1>
-
             <div className="slick review-slider">
-
-            <Slider {...settings}>
-          {data.users.map((user, index) => (
-            <Slide3 key={index} user={user}></Slide3>
-          ))}
-          </Slider>
-
-                <div className="slick-pagination"></div>
-
+              <Slider {...settings}>
+                {data.users.map((user, index) => (
+                  <Slide3 key={index} user={user}></Slide3>
+                ))}
+              </Slider>
+              <div className="slick-pagination"></div>
             </div>
-
             </section>
-
-        {/* )}*/}
-        </div>
     )
 }
 

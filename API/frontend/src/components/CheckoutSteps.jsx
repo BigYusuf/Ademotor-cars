@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {memo} from 'react'
 
 const CheckoutSteps = (props) => {
     return (
@@ -11,4 +11,4 @@ const CheckoutSteps = (props) => {
     )
 }
 
-export default CheckoutSteps
+export default memo(CheckoutSteps)

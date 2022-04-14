@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {memo} from 'react';
 import { Link } from 'react-router-dom';
 import Rating from './Rating';
 import '../pages/allproducts_page/viewAllProduct.css'
 
-export default function Product(props) {
+function Product(props) {
   const { product } = props;
   return (
     <div key={product._id} className="product__card">
@@ -23,3 +23,4 @@ export default function Product(props) {
     </div>
   );
 }
+export default memo(Product);

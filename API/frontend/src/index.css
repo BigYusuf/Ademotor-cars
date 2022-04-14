@@ -110,6 +110,7 @@ section{
 
 .header .dropdown-name{
     color:var(--black) !important;
+    display: flex;
 }
 .fa-caret-down:before{
     padding-left: 0.5rem
@@ -474,7 +475,6 @@ h1,
 }
 
 
-
 .newsletter{
     padding:6rem 2rem;
     background: url(./image/letter-bg.png) no-repeat;
@@ -482,7 +482,6 @@ h1,
     background-position: center;
     text-align: center;
 }
-
 .newsletter h3{
     font-size: 3rem;
     color:var(--black);
@@ -681,6 +680,7 @@ h1,
 .dropdown {
     display: inline-block;
     position: relative;
+    padding: 1rem;
   }
   .dropdown-contents {
     position: absolute;
@@ -851,4 +851,7 @@ h1,
         width: 100%;
     }
     
+    .header .dropdown-username{
+        display: none;
+    }
 }

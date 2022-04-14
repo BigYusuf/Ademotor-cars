@@ -47,9 +47,9 @@ const Navbar = () => {
 
                 {userInfo ? (
                   <div className="dropdown">
-                    <i className="dropdown-name">
-                      {userInfo.name }<i className="fa fa-caret-down"></i>{' '}
-                    </i>
+                    <div className="dropdown-name">
+                      <div className="dropdown-username">{userInfo.name}</div><i className="fa fa-caret-down"></i>{' '}
+                    </div>
                     <ul className="dropdown-contents">
                       <li  className="dropdown-list"> <Link to="/profile">User Profile</Link> </li>
                       <li  className="dropdown-list">  <Link to="/orderhistory">Order History</Link></li>
