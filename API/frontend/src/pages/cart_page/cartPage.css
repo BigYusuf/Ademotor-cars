@@ -3,8 +3,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-   
-    padding-top: 13rem;
+    padding: 12rem 2rem 0 2rem;
 }
 .cart__left{
     flex: 2 1 50rem;

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { detailsProduct } from '../actions/productActions';
-import LoadingBox from '../components/LoadingBox';
-import MessageBox from '../components/MessageBox';
-import Navbar from '../components/Navbar';
-import Rating from '../components/Rating';
+import { detailsProduct } from '../../actions/productActions';
+import LoadingBox from '../../components/LoadingBox';
+import MessageBox from '../../components/MessageBox';
+import Navbar from '../../components/Navbar';
+import Rating from '../../components/Rating';
 
 export default function ProductPage(props) {
   const dispatch = useDispatch();
@@ -21,14 +21,14 @@ export default function ProductPage(props) {
     props.history.push(`/cart/${productId}?qty=${qty}`);
   };
   return (
-    <div>
+    <div className="productSingle__container">
       <Navbar/>
       {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
-        <div>
+        <div className= "productSingle__wrapper">
           <Link to="/">Back to result</Link>
           <div className="row top">
             <div className="col-2">

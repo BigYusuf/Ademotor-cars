@@ -4,6 +4,9 @@
     justify-content: center;
     margin: 2rem 2rem;
 }
+.single{
+  margin-top: 10rem;
+}
 .productMain__header{
     display: flex;
     justify-content: space-between;

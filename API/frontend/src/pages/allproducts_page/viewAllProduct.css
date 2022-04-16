@@ -1,8 +1,14 @@
 .products__container{ 
-    margin: 10rem 15rem 0 15rem;
+    margin: 12rem 15rem 0 15rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.productSingle__container{
+    overflow: hidden;
+}
+.productSingle__wrapper{
+    margin: 10rem 15rem 0 15rem;
 }
 .products__contents{
     display: flex;
@@ -114,7 +120,9 @@
     }
     .products__wrapper{
         justify-content: center;
-        
+    } 
+    .productSingle__wrapper{
+        margin: 12rem 2rem 0 2rem;
     }
 }
 @media (max-width:670px){
@@ -126,6 +134,10 @@
 @media (max-width:450px){
     .search__input{
         width: 20rem;
+    }
+    
+    .productSingle__wrapper{
+        margin: 12rem 2rem 0 2rem;
     }
 }
 @media (max-width:320px){
