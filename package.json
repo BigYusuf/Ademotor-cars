@@ -9,7 +9,8 @@
     "heroku-postbuild": "cd API && cd frontend && npm install && npm run build"
   },
   "keywords": [
-    "api"
+    "api",
+    "ademotor car"
   ],
   "author": "mystik5551@gmail.com",
   "license": "ISC",
